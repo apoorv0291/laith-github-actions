@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: build this build
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,9 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm i
+      - run: npm i  
       - run: npm run build
   unit-tests:
+    name: Run unit test
     runs-on: ubuntu-latest
 
     strategy:
